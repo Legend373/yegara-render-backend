@@ -1,3 +1,4 @@
+const fetch = require('node-fetch')
 
 const sendEmail = async (options) => {
   const BREVO_API_KEY = process.env.BREVO_API_KEY;
