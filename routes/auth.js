@@ -14,6 +14,14 @@ const {
 const { authenticate } = require('../middleware/auth');
 
 router.post('/register', register);
+// SIMPLE TEST ROUTE - Add this FIRST!
+router.get('/ping', (req, res) => {
+  res.json({ 
+    message: 'Auth router is ALIVE!', 
+    timestamp: new Date().toISOString(),
+    env: process.env.NODE_ENV
+  });
+});
 router.post('/login', login);
 router.get('/logout', logout);
 router.get('/me', authenticate, getMe);
